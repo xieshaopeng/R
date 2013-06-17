@@ -1,2 +1,116 @@
-R
-=
+1.赋值语句
+x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+assign("x", c(10.4, 5.6, 3.1, 6.4, 21.7))  
+# c()和assign()为赋值语句
+2.
+> x<-c(1,2,3,4,5)
+> mean(x)
+[1] 3
+#运算函数：log，exp，sin，cos，tan，sqrt，var
+
+3.
+逻辑运算符< , <=,> , >=, 严格等于==  不等！=
+4.交  c1&c2  并 c1|c2
+5.缺损值  ？？？？
+6.
+
+=====ding r intro   P22
+
+
+7.a <- c(2:6) is equivalent to a <- c(2, 3, 4, 5, 6).
+8.
+R function
+sqrt ： 开平方函数 
+abs  ： 绝对值函数 
+exp  ： 2.71828… 
+expm1  ： 当x的绝对值比1小很多的时候，它将能更加正确的计算exp(x)-1 
+log  ： 对数函数 
+log10  ： 对数（底为10）函数 
+log2  ： 对数（底为2）函数 
+sin  ： 正弦函数 
+cos  ： 余弦函数 
+tan  ：  正切函数 
+asin  ：  反正弦函数 
+acos  ：  反余弦函数 
+atan  ：  反正切函数 
+sinh  ：  超越正弦函数 
+cosh  ：  超越余弦函数 
+tanh  ：  超越正切函数 
+asinh  ：  反超越正弦函数 
+acosh  ：  反超越余弦函数 
+atanh  ：  反超越正切函数 
+logb  ：  和log函数一样 
+log1px  ：  当x的绝对值比1小很多的时候，它将能更加正确的计算log(1+x) 
+gamma  ：  Γ函数（伽玛函数） 
+lgamma  ：  等同于log(gamma(x)) 
+ceiling  ：  返回大于或等于所给数字表达式的最小整数 
+floor  ：  返回小于或等于所 给数字表达式的最大整数 
+trunc  ：  截取整数部分 
+round  ：  四舍五入 
+signif(x,a)  ：  数据截取函数 x：有效位 a：到a位为止
+9.
+install r packages===>
+install.packages("Rweibo", repos = "http://jliblog.com/cran")
+
+10.update =====》
+update.packages()
+
+
+11.
+分词包：  #http://cos.name/cn/topic/105321
+> install.packages("rmmseg4j", repos="http://R-Forge.R-project.org",type='source')
+> library(rmmseg4j)
+> mmseg4j("技术、管理等方面的问题需进一步深入分析和验证，事故调查报告的形成仍需要一段时间")
+[1] "技术 管理 等 方面 的 问题 需 进一步 深入分析 和 验证 事故 调查 报告 的 形成 仍需 要 一段时间"
+12.search()  返回当前加载的包
+.packages(all.available=TRUE)
+12.
+ubuntu---/tmp
+#http://mazamascience.com/WorkingWithData/?p=1185
+13.
+Rweibo
+=====>
+install.packages("Rweibo", repos = "http://jliblog.com/cran",type="source")
+14.
+show temp directory==>
+tempdir()
+++++
+ setwd()  ====>R 的工作目录
+15.
+.libPaths()  ====>
+16.
+Individual users can install R packages into their home directory. The simplest procedure is to create a file ~/.Renviron containing, e.g.,
+
+   R_LIBS_USER="~/lib/R/library"
+17.
+zero status
+======>http://www.road2stat.com/cn/linux/ubuntu-10-10-r-installation.html
+18.
+Rweibo =========>
+#registerApp(app_name = "xieshaopeng", "2451866117", "60427b9a987802b53b05441380d794d1")
+
+
+
+
+19.
+欲知用户目录在哪儿，请在R中执行：
+
+normalizePath('~')
+20.
+ vignette("RODBC")   //查看package的文档
+21.
+//RODBC
+> ch<-odbcConnect(DSNname)
+> sqlQuery(ch,paste("select ....from....."))
+> 
+22.
+//ggplot2
+ggplot(data=c,aes(x=creationdate,y=RegCount))+geom_line()+geom_point()
+23.
+// RODBC
+注册量 & YOY & MOM & linear chart
+require(RODBC)
+ ch<-odbcConnect("dataforr")   // DSN="dataforr"  assigned to MATRIX
+ #DATA  sqlQuery(ch," select  rank()over(order by substring(convert(nvarchar,a.creationdate,112),1,6)) rankno,substring(convert(nvarchar,a.creationdate,112),1,6) creationdate,count(*) RegCount from ppd..userdetails a where year(a.creationdate)>2008 group by substring(convert(nvarchar,a.creationdate,112),1,6)")
+ 
+
