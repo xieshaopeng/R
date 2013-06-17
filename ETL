@@ -1,0 +1,7 @@
+1.
+//read.table
+etl<-read.table("C:\\Users\\xsp\\Desktop\\etl.txt",head=T)
+
+2.
+
+ 
