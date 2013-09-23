@@ -1,0 +1,15 @@
+1.
+//read txt file
+x<-read.table("C:\\Users\\luke\\Desktop\\weibo_credit\\social_graph\\test.txt",header=FALSE)
+
+2.
+//【igraph】 example
+http://rdatamining.wordpress.com/2012/05/17/an-example-of-social-network-analysis-with-r-using-package-igraph/
+http://horicky.blogspot.com/2012/04/basic-graph-analytics-using-igraph.html
+http://igraph.sourceforge.net/screenshots2.html
+
+3.
+//
+ plot(y,layout=layout.fruchterman.reingold,vertex.label=NA,vertex.size=4,edge.arrow.size=0.3)
+
+
